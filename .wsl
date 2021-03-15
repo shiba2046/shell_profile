@@ -1,0 +1,35 @@
+# Common aliases
+export BROWSER=firefox
+alias cmd='/mnt/c/Windows/System32/cmd.exe'
+
+case $HOSTNAME in
+"pengf-pc"):
+    export WSL_HOST_IP=192.168.1.82
+    alias adb='/mnt/e/adb/adb.exe'
+    ;;
+*):
+    export WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+    alias adb='/mnt/c/adb/adb.exe'
+    ;;
+esac
+
+
+proxy(){
+    case $1 in
+    "on"):
+        export http_proxy=http://$WSL_HOST_IP:7890
+        export https_proxy=http://$WSL_HOST_IP:7890
+        echo "Proxy turned ON"
+        ;;
+    "off"):
+        unset http_proxy
+        unset https_proxy
+        echo "Proxy turned OFF"
+      ;;
+    *):
+        echo "$0 on|off"
+        echo "http_proxy="$http_proxy
+        echo "https_proxy="$https_proxy
+    esac
+    
+}
