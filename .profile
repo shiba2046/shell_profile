@@ -46,7 +46,7 @@ if [[ -d "$HOME/.nvm" ]]; then
 fi
 
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -d "/home/linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # =================================
@@ -59,4 +59,4 @@ if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
     source "$HOME/shell_profile/.wsl"
 fi
 
-[ -f "$HOME/shell_profile/.adb"] && source $HOME/shell_profile/.adb
+[ -f "$HOME/shell_profile/.adb" ] && source $HOME/shell_profile/.adb
