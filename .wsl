@@ -1,6 +1,8 @@
 # Common aliases
 export BROWSER=firefox
 alias cmd='/mnt/c/Windows/System32/cmd.exe'
+HOSTNAME=$(hostname)
+#echo $HOSTNAME
 
 case $HOSTNAME in
 "pengf-pc"):

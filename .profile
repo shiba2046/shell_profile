@@ -47,8 +47,7 @@ fi
 
 
 [ -d "/home/linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-
+[ -f "$HOME/.cargo/env" ] && 
 # =================================
 # WSL Enviroment
 # =================================
@@ -60,3 +59,6 @@ if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
 fi
 
 [ -f "$HOME/shell_profile/.adb" ] && source $HOME/shell_profile/.adb
+export DISPLAY=172.23.0.1:0.0
+export DISPLAY=172.31.16.1:0.0
+export GPG_TTY=$(tty)

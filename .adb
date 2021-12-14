@@ -93,7 +93,7 @@
 adt() {
   case $1 in
   "f"):
-    adb send push $2 $3
+    adb push $2 $3
     ;;
   "t"):
     text=${2// /\%s}
